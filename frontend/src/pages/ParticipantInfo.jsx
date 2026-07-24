@@ -49,26 +49,57 @@ export default function ParticipantInfo() {
         <form className="card" onSubmit={handleSubmit}>
           <div className="field">
             <label htmlFor="age">Age</label>
-            <input
-              id="age"
-              type="number"
-              min="10"
-              max="20"
-              required
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-              placeholder="e.g. 15"
-            />
+            <select id="age" required value={age} onChange={(e) => setAge(e.target.value)}>
+              <option value="">Select your age</option>
+              <option value="10">10 years old</option>
+              <option value="11">11 years old</option>
+              <option value="12">12 years old</option>
+              <option value="13">13 years old</option>
+              <option value="14">14 years old</option>
+              <option value="15">15 years old</option>
+              <option value="16">16 years old</option>
+              <option value="17">17 years old</option>
+              <option value="18">18 years old</option>
+              <option value="19">19 years old</option>
+              <option value="20">20 years old</option>
+              <option value="21">21 years old</option>
+              <option value="22">22 years old</option>
+              <option value="23">23 years old</option>
+              <option value="24">24 years old</option>
+              <option value="25-30">25-30 years old</option>
+              <option value="31-40">31-40 years old</option>
+              <option value="41-50">41-50 years old</option>
+              <option value="51-60">51-60 years old</option>
+              <option value="60+">60+ years old</option>
+            </select>
           </div>
 
           <div className="field">
-            <label htmlFor="grade">Grade level</label>
+            <label htmlFor="grade">Education level</label>
             <select id="grade" required value={grade} onChange={(e) => setGrade(e.target.value)}>
-              <option value="">Select grade</option>
-              <option value="9">9th grade</option>
-              <option value="10">10th grade</option>
-              <option value="11">11th grade</option>
-              <option value="12">12th grade</option>
+              <option value="">Select education level</option>
+              <optgroup label="High School">
+                <option value="9">9th grade (Freshman)</option>
+                <option value="10">10th grade (Sophomore)</option>
+                <option value="11">11th grade (Junior)</option>
+                <option value="12">12th grade (Senior)</option>
+              </optgroup>
+              <optgroup label="College/University">
+                <option value="college-1">1st year undergraduate</option>
+                <option value="college-2">2nd year undergraduate</option>
+                <option value="college-3">3rd year undergraduate</option>
+                <option value="college-4">4th year undergraduate</option>
+                <option value="college-5+">5th+ year undergraduate</option>
+              </optgroup>
+              <optgroup label="Graduate/Professional">
+                <option value="masters">Master's degree</option>
+                <option value="doctoral">Doctoral degree</option>
+                <option value="professional">Professional degree</option>
+              </optgroup>
+              <optgroup label="Other">
+                <option value="ged">GED / Alternative credential</option>
+                <option value="other">Other</option>
+              </optgroup>
             </select>
           </div>
 

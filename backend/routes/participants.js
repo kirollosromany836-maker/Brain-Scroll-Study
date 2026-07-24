@@ -40,8 +40,8 @@ router.post('/', (req, res) => {
   const { age, grade, socialMediaUsage } = req.body || {};
 
   const ageNum = Number(age);
-  if (!ageNum || ageNum < 10 || ageNum > 20) {
-    return res.status(400).json({ error: 'Please provide a valid age between 10 and 20.' });
+  if (!ageNum || ageNum < 10 || ageNum > 100) {
+    return res.status(400).json({ error: 'Please provide a valid age (10 or older).' });
   }
   if (!grade || typeof grade !== 'string') {
     return res.status(400).json({ error: 'Please provide a grade level.' });
