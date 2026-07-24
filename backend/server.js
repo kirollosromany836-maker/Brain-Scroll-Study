@@ -10,7 +10,7 @@ const authRoutes = require('./routes/auth');
 
 const app = express();
 
-const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173').split(',');
+const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173,https://brain-scroll-study.vercel.app').split(',');
 app.use(cors({ origin: allowedOrigins }));
 app.use(express.json({ limit: '200kb' }));
 
